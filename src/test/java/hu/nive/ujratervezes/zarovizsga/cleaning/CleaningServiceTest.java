@@ -33,12 +33,12 @@ class CleaningServiceTest {
         assertEquals(0, service.getCleanables().size());
     }
 
-//    @Test
-//    void cleanOnlyOffices() {
-//        int result = service.cleanOnlyOffices();
-//        assertEquals(210_000, result);
-//        assertEquals(2, service.getCleanables().size());
-//    }
+    @Test
+    void cleanOnlyOffices() {
+        int result = service.cleanOnlyOffices();
+        assertEquals(210_000, result);
+        assertEquals(2, service.getCleanables().size());
+    }
 
     @Test
     void findByAddressPart() {

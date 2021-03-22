@@ -2,6 +2,7 @@ package hu.nive.ujratervezes.zarovizsga.cleaning;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
 
 public class CleaningService {
@@ -28,7 +29,12 @@ public class CleaningService {
                 sum += c.clean();
             }
         }
-
+        for (Iterator<Cleanable> c = cleanables.iterator(); c.hasNext();) {
+            Cleanable value = c.next();
+            if (value instanceof Office) {
+                c.remove();
+            }
+        }
         return sum;
     }
 
