@@ -21,16 +21,17 @@ public class CleaningService {
         return sum;
     }
 
-    public int cleanOnlyOffices(){
-        int sum=0;
-        for(Cleanable c:cleanables){
-          if(c instanceof Office){
-              sum+=c.clean();
-          }
+    public int cleanOnlyOffices() {
+        int sum = 0;
+        for (Cleanable c : cleanables) {
+            if (c instanceof Office) {
+                sum += c.clean();
+            }
         }
 
         return sum;
     }
+
     public List<Cleanable> findByAddressPart(String address) {
         List<Cleanable> result = new ArrayList<>();
         for (Cleanable c : cleanables) {
@@ -40,12 +41,13 @@ public class CleaningService {
         }
         return result;
     }
-    public String getAddresses(){
-        StringBuilder sb=new StringBuilder();
-        for(Cleanable c:cleanables){
+
+    public String getAddresses() {
+        StringBuilder sb = new StringBuilder();
+        for (Cleanable c : cleanables) {
             sb.append(c.getAddress()).append(", ");
         }
-
+        sb.delete(sb.length() - 2, sb.length());
         return sb.toString();
     }
 
